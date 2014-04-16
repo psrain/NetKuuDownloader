@@ -311,13 +311,16 @@ public class Window
                     }
                     finally
                     {
-                        try
+                        if (movie != null)
                         {
-                            movie.close();
-                        }
-                        catch (IOException e)
-                        {
-                            e.printStackTrace();
+                            try
+                            {
+                                movie.close();
+                            }
+                            catch (IOException e)
+                            {
+                                e.printStackTrace();
+                            } 
                         }
                         display.asyncExec(new Runnable()
                         {
@@ -477,9 +480,11 @@ public class Window
             }
             finally
             {
-                imgInputStream.close();
+                if (imgInputStream != null)
+                {
+                    imgInputStream.close();
+                }
             }
-
             display.asyncExec(new Runnable()
             {
                 @Override

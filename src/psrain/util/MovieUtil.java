@@ -106,7 +106,10 @@ public class MovieUtil
             // 若第一个哈希表的偏移量为0，则说明index.dat中，未记载任何历史记录
             if (hashTable == 0L)
             {
-                history.close();
+                if (history != null)
+                {
+                    history.close();
+                }
                 DebugOut.println("index.dat历史记录为空");
                 return result;
             }
@@ -266,13 +269,16 @@ public class MovieUtil
         }
         finally
         {
-            try
+            if (history != null)
             {
-                history.close();
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
+                try
+                {
+                    history.close();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
         }
         
