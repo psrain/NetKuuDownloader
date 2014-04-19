@@ -2,7 +2,7 @@
 ================
 本程序可提供“云窗”中视频的下载地址。
 
-##使用方法
+##项目主页
 * http://psrain.github.io/NetKuuDownloader
 
 ##源码导入
