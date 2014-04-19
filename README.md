@@ -8,5 +8,5 @@
 ##源码导入
 * https://github.com/psrain/NetKuuDownloader/wiki/SourceCodeImport
 
-##实现原理
-* https://github.com/psrain/NetKuuDownloader/wiki/ImplementationPrinciple
+##背景知识
+* https://github.com/psrain/NetKuuDownloader/wiki/Background
