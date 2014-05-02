@@ -2,6 +2,9 @@
  * 描述：           该文件定义了类Window，该类提供了本程序的GUI。
  * 创建人：       psrain
  * 创建时间：   2014.4.8
+ * 修改人：       psrain
+ * 修改时间：   2014.5.2
+ * 修改内容：    自动设置服务器IP。
  */
 
 package psrain.gui;
@@ -34,6 +37,7 @@ import org.eclipse.swt.widgets.Text;
 
 import psrain.util.MovieUtil;
 import psrain.util.RegexUtil;
+import psrain.util.SystemInfo;
 
 /**
  * 类Window提供了本程序的GUI。
@@ -86,6 +90,7 @@ public class Window
         shell.setSize(760, 450);
         shell.setText("NetKuu Downloader");
         addWidgets();
+        hostIPText.setText(SystemInfo.getHostIP());
         shell.open();
         shell.layout();
         while (!shell.isDisposed())
@@ -226,7 +231,7 @@ public class Window
         movieAddressText.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
                                                     true, 4, 1));
     }
-
+    
     /**
      * 查找用户最近一次使用云窗所播放的影片的下载地址，并将下载地址以及关于该影片的
      * 一些其他信息（片名、导演、演员等）显示给用户（如果找到的话）
